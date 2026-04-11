@@ -4,7 +4,7 @@
   <title>Rob Sedgwick Real Estate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font: Cinzel -->
+  <!-- Cinzel Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
       color: #0a1f44;
     }
 
-    /* HEADER */
     header {
       background-color: #0a1f44;
       color: white;
@@ -29,7 +28,6 @@
       margin: 0;
       font-family: 'Cinzel', serif;
       letter-spacing: 2px;
-      font-weight: 600;
     }
 
     nav {
@@ -41,49 +39,43 @@
       margin: 0 14px;
       text-decoration: none;
       font-weight: bold;
-      font-family: "Times New Roman", Times, serif;
     }
 
-    /* HERO */
+    /* HERO IMAGE */
     .hero {
       position: relative;
       text-align: center;
-      padding: 110px 20px;
+      padding: 130px 20px;
       color: white;
-      background: linear-gradient(
-          rgba(10, 31, 68, 0.78),
-          rgba(10, 31, 68, 0.78)
-        ),
-        url("https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80");
+      background:
+        linear-gradient(rgba(10,31,68,0.65), rgba(10,31,68,0.65)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
     }
 
     .hero h2 {
       font-family: 'Cinzel', serif;
-      font-size: 42px;
+      font-size: 44px;
       margin-bottom: 10px;
-      letter-spacing: 1px;
     }
 
     .hero p {
       font-size: 18px;
-      margin-bottom: 25px;
-      font-family: "Times New Roman", Times, serif;
     }
 
-    /* BUTTON */
     .btn {
-      background-color: #ffffff;
+      display: inline-block;
+      margin-top: 20px;
+      background: white;
       color: #0a1f44;
-      padding: 12px 22px;
+      padding: 12px 20px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
-      font-family: "Times New Roman", Times, serif;
     }
 
-    /* SECTIONS */
+    /* SECTION */
     .section {
       padding: 60px 20px;
       text-align: center;
@@ -95,28 +87,44 @@
       font-family: 'Cinzel', serif;
       font-size: 28px;
       margin-bottom: 15px;
-      letter-spacing: 1px;
     }
 
     .section p {
       font-family: "Times New Roman", Times, serif;
-      color: #333;
       line-height: 1.7;
+      color: #333;
     }
 
-    /* STRIP */
-    .strip {
-      background: #f4f7fb;
+    /* LISTING LINKS */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    /* FOOTER */
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 300px;
+      text-decoration: none;
+      color: #0a1f44;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #0a1f44;
+    }
+
     footer {
-      background-color: #0a1f44;
+      background: #0a1f44;
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 13px;
-      font-family: "Times New Roman", Times, serif;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -133,33 +141,48 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <h2>Hilton Head Real Estate</h2>
-    <p>Professional guidance. Local expertise. Strong results.</p>
-    <a href="#" class="btn">View Listings</a>
+    <p>Local expertise. Strong negotiation. Trusted results.</p>
+    <a class="btn" href="https://robsedgwick.myresides.com/" target="_blank">
+      View Listings
+    </a>
   </section>
 
+  <!-- ABOUT -->
   <section class="section">
     <h3>Local Market Expertise</h3>
     <p>
       Serving Hilton Head Island, Bluffton, Okatie, and Hardeeville with a focus on
-      clear communication, strong negotiation, and results that matter.
+      clear communication, market knowledge, and delivering results.
     </p>
   </section>
 
-  <section class="section strip">
-    <h3>Open Houses & Featured Properties</h3>
-    <p>
-      Stay up to date with the latest opportunities across the Lowcountry real estate market.
-    </p>
+  <!-- LISTING PORTALS -->
+  <section class="section" style="background:#f4f7fb;">
+    <h3>Featured Listing Portals</h3>
+
+    <div class="links">
+
+      <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
+        <h3>My Listings</h3>
+        <p>Browse all current properties directly listed by Rob Sedgwick.</p>
+      </a>
+
+      <a class="card" href="https://robertsedgwick.exprealty.com/" target="_blank">
+        <h3>Brokerage Site</h3>
+        <p>Explore additional listings and brokerage resources.</p>
+      </a>
+
+    </div>
   </section>
 
+  <!-- CTA -->
   <section class="section">
     <h3>Let’s Connect</h3>
-    <p>
-      Whether you're buying, selling, or exploring the market — I’m here to help.
-    </p>
-    <a href="#" class="btn">Contact Me</a>
+    <p>Ready to buy or sell in the Lowcountry? Reach out today.</p>
+    <a class="btn" href="#">Contact</a>
   </section>
 
   <footer>
