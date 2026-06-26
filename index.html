@@ -45,7 +45,7 @@
     .hero {
       position: relative;
       text-align: center;
-      padding: 130px 20px;
+      padding: 100px 20px;
       color: white;
       background:
         linear-gradient(rgba(10,31,68,0.65), rgba(10,31,68,0.65)),
@@ -73,6 +73,43 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
+    }
+
+    /* HORIZONTAL LISTINGS SCROLL */
+    .horizontal-listings-wrapper {
+      max-width: 1100px;
+      margin: 30px auto 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      background: white;
+      border: 2px solid rgba(255,255,255,0.85);
+      border-radius: 6px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .horizontal-listings-inner {
+      width: 1400px;
+      height: 520px;
+    }
+
+    .horizontal-listings-inner iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: white;
+    }
+
+    .listing-fallback {
+      margin-top: 15px;
+      font-size: 14px;
+      color: white;
+    }
+
+    .listing-fallback a {
+      color: white;
+      font-weight: bold;
     }
 
     /* SECTION */
@@ -111,6 +148,7 @@
       text-decoration: none;
       color: #0a1f44;
       transition: 0.2s;
+      background: white;
     }
 
     .card:hover {
@@ -126,6 +164,30 @@
       font-size: 13px;
       margin-top: 40px;
     }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+
+      .hero {
+        padding: 80px 15px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .horizontal-listings-inner {
+        width: 1200px;
+        height: 480px;
+      }
+
+      .card {
+        width: 85%;
+      }
+    }
   </style>
 </head>
 
@@ -135,19 +197,32 @@
     <h1>Rob Sedgwick</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Listings</a>
-      <a href="#">Communities</a>
-      <a href="#">Contact</a>
+      <a href="#listings">Listings</a>
+      <a href="#communities">Communities</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="listings">
     <h2>Hilton Head Real Estate</h2>
     <p>Local expertise. Strong negotiation. Trusted results.</p>
-    <a class="btn" href="https://robsedgwick.myresides.com/" target="_blank">
-      View Listings
-    </a>
+
+    <div class="horizontal-listings-wrapper">
+      <div class="horizontal-listings-inner">
+        <iframe 
+          src="https://robsedgwick.myresides.com/about-me"
+          title="Rob Sedgwick Listings">
+        </iframe>
+      </div>
+    </div>
+
+    <p class="listing-fallback">
+      Swipe or scroll sideways to view listings. If listings do not load, 
+      <a href="https://robsedgwick.myresides.com/about-me" target="_blank">
+        click here to view them directly.
+      </a>
+    </p>
   </section>
 
   <!-- ABOUT -->
@@ -178,11 +253,19 @@
     </div>
   </section>
 
+  <!-- COMMUNITIES -->
+  <section class="section" id="communities">
+    <h3>Communities Served</h3>
+    <p>
+      Hilton Head Island, Bluffton, Okatie, Hardeeville, and surrounding Lowcountry communities.
+    </p>
+  </section>
+
   <!-- CTA -->
-  <section class="section">
+  <section class="section" id="contact">
     <h3>Let’s Connect</h3>
     <p>Ready to buy or sell in the Lowcountry? Reach out today.</p>
-    <a class="btn" href="#">Contact</a>
+    <a class="btn" href="https://robsedgwick.myresides.com/about-me" target="_blank">Contact Rob</a>
   </section>
 
   <footer>
