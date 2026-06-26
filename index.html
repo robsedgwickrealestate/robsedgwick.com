@@ -126,6 +126,7 @@
       margin-top: 16px;
       color: #0a1f44;
       font-size: 15px;
+      line-height: 1.8;
     }
 
     .quick-searches span {
@@ -142,6 +143,10 @@
       cursor: pointer;
       font-family: "Times New Roman", Times, serif;
       font-size: 15px;
+    }
+
+    .quick-searches button:hover {
+      color: #14376f;
     }
 
     .section {
@@ -270,6 +275,11 @@
         box-sizing: border-box;
       }
 
+      .quick-searches button {
+        display: block;
+        margin: 6px auto;
+      }
+
       .card {
         width: 85%;
       }
@@ -291,7 +301,7 @@
 
   <section class="hero" id="search">
     <h2>Hilton Head Real Estate</h2>
-    <p>Search homes across Hilton Head Island, with a focus on the 29928 market and surrounding Lowcountry communities.</p>
+    <p>Search homes across Hilton Head Island and the surrounding Lowcountry communities.</p>
 
     <div class="property-search-box">
       <h3 class="property-search-title">Search Lowcountry Homes</h3>
@@ -307,10 +317,11 @@
       </form>
 
       <div class="quick-searches">
-        <span>Focus area:</span>
-        <button type="button" onclick="searchSpecificZip('29928')">29928 Hilton Head Island</button>
-        <button type="button" onclick="searchSpecificZip('29910')">29910 Bluffton</button>
-        <button type="button" onclick="searchSpecificZip('29926')">29926 Hilton Head</button>
+        <span>Popular searches:</span>
+        <button type="button" onclick="searchSpecificZip('29928')">Hilton Head Island South End</button>
+        <button type="button" onclick="searchSpecificZip('29926')">Hilton Head Island North End</button>
+        <button type="button" onclick="searchSpecificZip('29910')">Bluffton</button>
+        <button type="button" onclick="searchSpecificZip('29927')">Hardeeville</button>
       </div>
     </div>
   </section>
@@ -318,13 +329,16 @@
   <section class="section">
     <h3>Local Market Expertise</h3>
     <p>
-      Serving Hilton Head Island, Bluffton, Okatie, Hardeeville, and the surrounding Lowcountry with clear communication, local market knowledge, and a focused approach to helping buyers and sellers make confident real estate decisions.
+      Serving Hilton Head Island, Bluffton, Hardeeville, Okatie, and the surrounding Lowcountry with clear communication, local market knowledge, and a focused approach to helping buyers and sellers make confident real estate decisions.
     </p>
   </section>
 
   <section class="section section-light">
     <div class="section-inner">
       <h3>Start Your Property Search</h3>
+      <p>
+        Explore key Lowcountry areas including Hilton Head Island’s South End, Hilton Head Island’s North End, Bluffton, Hardeeville, and nearby communities.
+      </p>
 
       <div class="links">
         <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
@@ -343,7 +357,7 @@
   <section class="section" id="communities">
     <h3>Communities Served</h3>
     <p>
-      Hilton Head Island, Bluffton, Okatie, Hardeeville, and surrounding Lowcountry communities.
+      Search by area across the Lowcountry, including Hilton Head Island’s South End, Hilton Head Island’s North End, Bluffton, Hardeeville, Okatie, and surrounding communities.
     </p>
   </section>
 
