@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Rob Sedgwick Real Estate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,7 @@
       margin: 0;
       font-family: 'Cinzel', serif;
       letter-spacing: 2px;
+      font-size: 34px;
     }
 
     nav {
@@ -39,16 +40,20 @@
       margin: 0 14px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
-    /* HERO IMAGE */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .hero {
       position: relative;
       text-align: center;
-      padding: 100px 20px;
+      padding: 110px 20px;
       color: white;
       background:
-        linear-gradient(rgba(10,31,68,0.65), rgba(10,31,68,0.65)),
+        linear-gradient(rgba(10,31,68,0.68), rgba(10,31,68,0.68)),
         url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
@@ -57,62 +62,88 @@
     .hero h2 {
       font-family: 'Cinzel', serif;
       font-size: 44px;
-      margin-bottom: 10px;
+      margin: 0 0 12px;
+      letter-spacing: 1px;
     }
 
     .hero p {
       font-size: 18px;
+      margin: 0 0 28px;
+      line-height: 1.5;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: white;
-      color: #0a1f44;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    /* HORIZONTAL LISTINGS SCROLL */
-    .horizontal-listings-wrapper {
-      max-width: 1100px;
-      margin: 30px auto 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      background: white;
-      border: 2px solid rgba(255,255,255,0.85);
+    .property-search-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 24px;
       border-radius: 6px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      -webkit-overflow-scrolling: touch;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 
-    .horizontal-listings-inner {
-      width: 1400px;
-      height: 520px;
+    .property-search-title {
+      color: #0a1f44;
+      font-family: 'Cinzel', serif;
+      font-size: 25px;
+      margin: 0 0 15px;
     }
 
-    .horizontal-listings-inner iframe {
-      width: 100%;
-      height: 100%;
+    .property-search-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .property-search-form input {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 15px;
+      font-size: 16px;
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .property-search-form button {
+      padding: 14px 24px;
+      font-size: 16px;
+      background: #0a1f44;
+      color: white;
       border: none;
-      display: block;
-      background: white;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
     }
 
-    .listing-fallback {
-      margin-top: 15px;
-      font-size: 14px;
-      color: white;
+    .property-search-form button:hover {
+      background: #14376f;
     }
 
-    .listing-fallback a {
-      color: white;
+    .quick-searches {
+      margin-top: 16px;
+      color: #0a1f44;
+      font-size: 15px;
+    }
+
+    .quick-searches span {
       font-weight: bold;
     }
 
-    /* SECTION */
+    .quick-searches button {
+      background: none;
+      border: none;
+      color: #0a1f44;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0 8px;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+    }
+
     .section {
       padding: 60px 20px;
       text-align: center;
@@ -124,15 +155,25 @@
       font-family: 'Cinzel', serif;
       font-size: 28px;
       margin-bottom: 15px;
+      color: #0a1f44;
     }
 
     .section p {
-      font-family: "Times New Roman", Times, serif;
       line-height: 1.7;
       color: #333;
+      font-size: 17px;
     }
 
-    /* LISTING LINKS */
+    .section-light {
+      background: #f4f7fb;
+      max-width: none;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
     .links {
       display: flex;
       justify-content: center;
@@ -143,17 +184,45 @@
 
     .card {
       border: 1px solid #ddd;
-      padding: 20px;
+      padding: 22px;
       width: 300px;
       text-decoration: none;
       color: #0a1f44;
       transition: 0.2s;
       background: white;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     }
 
     .card:hover {
       transform: translateY(-3px);
       border-color: #0a1f44;
+    }
+
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #0a1f44;
+      color: white;
+      padding: 13px 22px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: #14376f;
     }
 
     footer {
@@ -166,6 +235,10 @@
     }
 
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
       nav a {
         display: inline-block;
         margin: 6px 8px;
@@ -179,9 +252,22 @@
         font-size: 32px;
       }
 
-      .horizontal-listings-inner {
-        width: 1200px;
-        height: 480px;
+      .hero p {
+        font-size: 16px;
+      }
+
+      .property-search-box {
+        padding: 18px;
+      }
+
+      .property-search-form {
+        flex-direction: column;
+      }
+
+      .property-search-form input,
+      .property-search-form button {
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .card {
@@ -197,63 +283,63 @@
     <h1>Rob Sedgwick</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#listings">Listings</a>
+      <a href="#search">Search</a>
       <a href="#communities">Communities</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="listings">
+  <section class="hero" id="search">
     <h2>Hilton Head Real Estate</h2>
-    <p>Local expertise. Strong negotiation. Trusted results.</p>
+    <p>Search homes across Hilton Head Island, with a focus on the 29928 market and surrounding Lowcountry communities.</p>
 
-    <div class="horizontal-listings-wrapper">
-      <div class="horizontal-listings-inner">
-        <iframe 
-          src="https://robsedgwick.myresides.com/about-me"
-          title="Rob Sedgwick Listings">
-        </iframe>
+    <div class="property-search-box">
+      <h3 class="property-search-title">Search Lowcountry Homes</h3>
+
+      <form class="property-search-form" onsubmit="searchProperties(event)">
+        <input 
+          type="text" 
+          id="propertySearchInput" 
+          placeholder="Enter any zip code, example: 29928"
+          required
+        >
+        <button type="submit">Search Listings</button>
+      </form>
+
+      <div class="quick-searches">
+        <span>Focus area:</span>
+        <button type="button" onclick="searchSpecificZip('29928')">29928 Hilton Head Island</button>
+        <button type="button" onclick="searchSpecificZip('29910')">29910 Bluffton</button>
+        <button type="button" onclick="searchSpecificZip('29926')">29926 Hilton Head</button>
       </div>
     </div>
-
-    <p class="listing-fallback">
-      Swipe or scroll sideways to view listings. If listings do not load, 
-      <a href="https://robsedgwick.myresides.com/about-me" target="_blank">
-        click here to view them directly.
-      </a>
-    </p>
   </section>
 
-  <!-- ABOUT -->
   <section class="section">
     <h3>Local Market Expertise</h3>
     <p>
-      Serving Hilton Head Island, Bluffton, Okatie, and Hardeeville with a focus on
-      clear communication, market knowledge, and delivering results.
+      Serving Hilton Head Island, Bluffton, Okatie, Hardeeville, and the surrounding Lowcountry with clear communication, local market knowledge, and a focused approach to helping buyers and sellers make confident real estate decisions.
     </p>
   </section>
 
-  <!-- LISTING PORTALS -->
-  <section class="section" style="background:#f4f7fb;">
-    <h3>Featured Listing Portals</h3>
+  <section class="section section-light">
+    <div class="section-inner">
+      <h3>Start Your Property Search</h3>
 
-    <div class="links">
+      <div class="links">
+        <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
+          <h3>Search All Listings</h3>
+          <p>Browse current properties through Rob Sedgwick’s home search portal.</p>
+        </a>
 
-      <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
-        <h3>My Listings</h3>
-        <p>Browse all current properties directly listed by Rob Sedgwick.</p>
-      </a>
-
-      <a class="card" href="https://robertsedgwick.exprealty.com/" target="_blank">
-        <h3>Brokerage Site</h3>
-        <p>Explore additional listings and brokerage resources.</p>
-      </a>
-
+        <a class="card" href="https://robertsedgwick.exprealty.com/" target="_blank">
+          <h3>Brokerage Site</h3>
+          <p>Explore additional listings and brokerage resources.</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- COMMUNITIES -->
   <section class="section" id="communities">
     <h3>Communities Served</h3>
     <p>
@@ -261,7 +347,6 @@
     </p>
   </section>
 
-  <!-- CTA -->
   <section class="section" id="contact">
     <h3>Let’s Connect</h3>
     <p>Ready to buy or sell in the Lowcountry? Reach out today.</p>
@@ -271,6 +356,55 @@
   <footer>
     © 2026 Rob Sedgwick Real Estate | Hilton Head Island, SC
   </footer>
+
+  <script>
+    function buildMyResidesSearchUrl(searchTerm) {
+      var cleanSearchTerm = searchTerm.trim();
+
+      var searchQuery = {
+        SavedSearchId: 0,
+        SearchTypes: [0, 1, 3],
+        PropertyTypes: [0, 1, 2, 3, 19, 20, 21, 30, 39, 40, 41, 49, 50, 59, 60, 61, 69],
+        TransactionTypes: [0],
+        Location: cleanSearchTerm + "_2",
+        Pricing: null,
+        Bedrooms: null,
+        Bathrooms: null,
+        SquareFootage: null,
+        Acreage: null,
+        YearBuilt: null,
+        OpenHouses: null,
+        ChangedDate: null,
+        Keywords: [],
+        MapPolygon: null,
+        MapBounds: null,
+        MapViewBounds: null,
+        Offset: null,
+        SortingPreset: 3
+      };
+
+      var encodedQuery = encodeURIComponent(JSON.stringify(searchQuery));
+      return "https://robsedgwick.myresides.com/search/?q=" + encodedQuery;
+    }
+
+    function searchProperties(event) {
+      event.preventDefault();
+
+      var searchTerm = document.getElementById("propertySearchInput").value.trim();
+
+      if (!searchTerm) {
+        return;
+      }
+
+      var destination = buildMyResidesSearchUrl(searchTerm);
+      window.open(destination, "_blank");
+    }
+
+    function searchSpecificZip(zipCode) {
+      var destination = buildMyResidesSearchUrl(zipCode);
+      window.open(destination, "_blank");
+    }
+  </script>
 
 </body>
 </html>
