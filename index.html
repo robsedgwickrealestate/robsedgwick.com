@@ -430,7 +430,7 @@
     <p onclick="showValuationForm()">Get a current market valuation for your home</p>
 
     <div id="valuationFormContainer">
-      <form id="valuationForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form id="valuationForm" action="https://formspree.io/f/xdaqjwvl" method="POST">
         
         <!-- Step 1: Property Info -->
         <div id="step1" class="valuation-step active">
@@ -484,8 +484,35 @@
 
   <section class="section" id="contact">
     <h3>Let's Connect</h3>
-    <p>Ready to buy or sell in the Lowcountry? Reach out today.</p>
-    <a class="btn" href="https://robsedgwick.myresides.com/about-me" target="_blank">Contact Rob</a>
+    <p>Ready to buy or sell in the Lowcountry? Send a message below.</p>
+    
+    <div style="max-width: 500px; margin: 30px auto; background: #f4f7fb; padding: 30px; border-radius: 6px;">
+      <form action="https://formspree.io/f/xdaqjwvl" method="POST">
+        
+        <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <input type="email" name="email" placeholder="Email Address" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <input type="tel" name="phone" placeholder="Phone Number" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <select name="interest" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+          <option value="">I'm interested in...</option>
+          <option value="buying">Buying</option>
+          <option value="selling">Selling</option>
+          <option value="both">Both</option>
+          <option value="question">General Question</option>
+        </select>
+        
+        <textarea name="message" placeholder="Tell me about what you're looking for" rows="5" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; resize: vertical;"></textarea>
+        
+        <button type="submit" style="background: #0a1f44; color: white; padding: 14px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-family: 'Times New Roman', Times, serif; font-weight: bold; width: 100%;">Send Message</button>
+      </form>
+    </div>
+    
+    <p style="margin-top: 30px; font-size: 15px; color: #333;">
+      <strong>Call or Text:</strong> <a href="tel:+18437057788" style="color: #0a1f44; text-decoration: none; font-weight: bold;">843-705-7788</a><br>
+      <strong>Email:</strong> <a href="mailto:rob@hhirealestate.com" style="color: #0a1f44; text-decoration: none; font-weight: bold;">rob@hhirealestate.com</a>
+    </p>
   </section>
 
   <footer>
