@@ -1,628 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rob Sedgwick - Lowcountry Real Estate Expert</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-        
-        /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 8rem 2rem;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #ffd700;
-            color: #1e3a5f;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: #ffed4e;
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #1e3a5f;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-        }
-        
-        /* Areas Section */
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .area-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: background 0.3s;
-        }
-        
-        .area-card:hover {
-            background: #e9ecef;
-        }
-        
-        /* Testimonials Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .testimonial-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            margin-top: 1rem;
-            font-weight: bold;
-            font-style: normal;
-            color: #1e3a5f;
-        }
-        
-        /* Market Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffd700;
-        }
-        
-        /* Selling Section */
-        .selling-content {
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-        }
-        
-        .selling-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .step {
-            text-align: center;
-        }
-        
-        .step-number {
-            background: #1e3a5f;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        /* Valuation Form */
-        .valuation-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #1e3a5f;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-button {
-            background: #1e3a5f;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-button:hover {
-            background: #2c5282;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .contact-info h3 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-item {
-            margin-bottom: 1rem;
-        }
-        
-        .contact-item a {
-            color: #1e3a5f;
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            color: #2c5282;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1e3a5f;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            section h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <title>Rob Sedgwick Real Estate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cinzel Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      background-color: #ffffff;
+      color: #0a1f44;
+    }
+
+    header {
+      background-color: #0a1f44;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      font-size: 34px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 14px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 110px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(10,31,68,0.68), rgba(10,31,68,0.68)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 44px;
+      margin: 0 0 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+
+    .property-search-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 24px;
+      border-radius: 6px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .property-search-title {
+      color: #0a1f44;
+      font-family: 'Cinzel', serif;
+      font-size: 25px;
+      margin: 0 0 15px;
+    }
+
+    .property-search-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .property-search-form input {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 15px;
+      font-size: 16px;
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .property-search-form button {
+      padding: 14px 24px;
+      font-size: 16px;
+      background: #0a1f44;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .property-search-form button:hover {
+      background: #14376f;
+    }
+
+    .quick-searches {
+      margin-top: 16px;
+      color: #0a1f44;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .quick-searches span {
+      font-weight: bold;
+    }
+
+    .quick-searches button {
+      background: none;
+      border: none;
+      color: #0a1f44;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0 8px;
+      cursor: pointer;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+    }
+
+    .quick-searches button:hover {
+      color: #14376f;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #0a1f44;
+    }
+
+    .section p {
+      line-height: 1.7;
+      color: #333;
+      font-size: 17px;
+    }
+
+    .section-light {
+      background: #f4f7fb;
+      max-width: none;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 22px;
+      width: 300px;
+      text-decoration: none;
+      color: #0a1f44;
+      transition: 0.2s;
+      background: white;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #0a1f44;
+    }
+
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #0a1f44;
+      color: white;
+      padding: 13px 22px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: #14376f;
+    }
+
+    /* Home Valuation Section */
+    #home-valuation {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f4f7fb;
+    }
+
+    #home-valuation h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #0a1f44;
+    }
+
+    #home-valuation > p {
+      font-size: 18px;
+      color: #0a1f44;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    #home-valuation > p:hover {
+      color: #14376f;
+    }
+
+    #valuationFormContainer {
+      display: none;
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    #valuationFormContainer.active {
+      display: block;
+    }
+
+    .valuation-step h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #0a1f44;
+    }
+
+    .valuation-step input {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 15px 0;
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      font-family: "Times New Roman", Times, serif;
+      box-sizing: border-box;
+    }
+
+    .valuation-step button {
+      background: #0a1f44;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+
+    .valuation-step button:hover {
+      background: #14376f;
+    }
+
+    .valuation-step {
+      display: none;
+    }
+
+    .valuation-step.active {
+      display: block;
+    }
+
+    footer {
+      background: #0a1f44;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+
+      .hero {
+        padding: 80px 15px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .property-search-box {
+        padding: 18px;
+      }
+
+      .property-search-form {
+        flex-direction: column;
+      }
+
+      .property-search-form input,
+      .property-search-form button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .quick-searches button {
+        display: block;
+        margin: 6px auto;
+      }
+
+      .card {
+        width: 85%;
+      }
+
+      #valuationFormContainer {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Rob Sedgwick</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#areas">Areas</a></li>
-                <li><a href="#selling">Selling</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Your Trusted Lowcountry Real Estate Expert</h1>
-        <p>Helping families find their dream homes in Charleston, Hilton Head & Beyond</p>
-        <a href="#contact" class="cta-button">Get Started Today</a>
-    </section>
+  <header>
+    <h1>Rob Sedgwick</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#search">Search</a>
+      <a href="#communities">Communities</a>
+      <a href="#valuation">Sell</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Rob Sedgwick</h2>
-        <div class="about-content">
-            <div>
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Rob Sedgwick" class="about-image">
-            </div>
-            <div>
-                <p>With years of experience in the Lowcountry real estate market, I've helped hundreds of families find their perfect home. Whether you're buying your first home, upgrading to accommodate a growing family, or looking for your dream retirement property, I'm here to guide you every step of the way.</p>
-                <br>
-                <p>My deep knowledge of Charleston, Hilton Head Island, Bluffton, and surrounding areas, combined with a commitment to personalized service, ensures that you'll have an expert advocate working tirelessly on your behalf.</p>
-                <br>
-                <p>I believe in building lasting relationships with my clients, many of whom return to me for their future real estate needs and refer their friends and family. Your success is my success, and I'm dedicated to making your real estate dreams a reality.</p>
-            </div>
+  <section class="hero" id="search">
+    <h2>Hilton Head Real Estate</h2>
+    <p>Search homes across Hilton Head Island and the surrounding Lowcountry communities.</p>
+
+    <div class="property-search-box">
+      <h3 class="property-search-title">Search Lowcountry Homes</h3>
+
+      <form class="property-search-form" onsubmit="searchProperties(event)">
+        <input 
+          type="text" 
+          id="propertySearchInput" 
+          placeholder="Enter any zip code, example: 29928"
+          required
+        >
+        <button type="submit">Search Listings</button>
+      </form>
+
+      <div class="quick-searches">
+        <span>Popular searches:</span>
+        <button type="button" onclick="searchSpecificZip('29928')">Hilton Head Island South End</button>
+        <button type="button" onclick="searchSpecificZip('29926')">Hilton Head Island North End</button>
+        <button type="button" onclick="searchSpecificZip('29910')">Bluffton</button>
+        <button type="button" onclick="searchSpecificZip('29927')">Hardeeville</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Local Market Expertise</h3>
+    <p>
+      Serving Hilton Head Island, Bluffton, Hardeeville, Okatie, and the surrounding Lowcountry with clear communication, local market knowledge, and a focused approach to helping buyers and sellers make confident real estate decisions.
+    </p>
+  </section>
+
+  <!-- HOME VALUATION SECTION -->
+  <section id="home-valuation" class="section-light">
+    <h3 id="valuation">Looking to Sell?</h3>
+    <p onclick="showValuationForm()">Get a current market valuation for your home</p>
+
+    <div id="valuationFormContainer">
+      <form id="valuationForm" action="https://formspree.io/f/xlgqvora" method="POST">
+        
+        <!-- Step 1: Property Info -->
+        <div id="step1" class="valuation-step active">
+          <h4>Property Information</h4>
+          <input type="text" name="street_address" placeholder="Street Address" required>
+          <input type="text" name="unit_number" placeholder="Unit Number (if applicable)">
+          <input type="text" name="zip_code" placeholder="Zip Code" required>
+          <input type="text" name="state" placeholder="State" required>
+          <button type="button" onclick="showStep2()">Continue</button>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>How I Can Help You</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>🏡 Buyer Representation</h3>
-                <p>Finding the perfect home can be overwhelming. I'll help you navigate the market, identify properties that meet your needs, negotiate the best price, and handle all the details from offer to closing.</p>
-            </div>
-            <div class="service-card">
-                <h3>💰 Seller Representation</h3>
-                <p>Get top dollar for your property with strategic pricing, professional marketing, expert negotiation, and a smooth transaction process. I'll showcase your home to attract serious buyers.</p>
-            </div>
-            <div class="service-card">
-                <h3>🏖️ Investment Properties</h3>
-                <p>Looking to invest in the Lowcountry? I'll help you identify profitable opportunities, analyze potential returns, and build your real estate portfolio with confidence.</p>
-            </div>
-            <div class="service-card">
-                <h3>🌴 Luxury Homes</h3>
-                <p>Specializing in high-end properties throughout the Lowcountry, I offer discrete, professional service for discerning buyers and sellers of luxury real estate.</p>
-            </div>
-            <div class="service-card">
-                <h3>🔑 First-Time Buyers</h3>
-                <p>Buying your first home? I'll guide you through every step, from understanding financing options to finding the perfect property within your budget.</p>
-            </div>
-            <div class="service-card">
-                <h3>🏠 Relocation Services</h3>
-                <p>Moving to the Lowcountry? I'll help you understand the area, find the right neighborhood, and make your transition as smooth as possible.</p>
-            </div>
+        
+        <!-- Step 2: Contact Info -->
+        <div id="step2" class="valuation-step">
+          <h4>Where should we send it?</h4>
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <button type="submit">Get My Valuation</button>
         </div>
-    </section>
+      </form>
+    </div>
+  </section>
 
-    <!-- Areas Served Section -->
-    <section id="areas">
-        <h2>Areas I Serve</h2>
-        <div class="areas-grid">
-            <div class="area-card">
-                <h3>Charleston</h3>
-                <p>Historic charm meets modern living</p>
-            </div>
-            <div class="area-card">
-                <h3>Hilton Head Island</h3>
-                <p>Coastal paradise and resort living</p>
-            </div>
-            <div class="area-card">
-                <h3>Bluffton</h3>
-                <p>Southern charm and growing community</p>
-            </div>
-            <div class="area-card">
-                <h3>Mount Pleasant</h3>
-                <p>Family-friendly coastal town</p>
-            </div>
-            <div class="area-card">
-                <h3>Summerville</h3>
-                <p>The Flowertown in the Pines</p>
-            </div>
-            <div class="area-card">
-                <h3>Daniel Island</h3>
-                <p>Master-planned island community</p>
-            </div>
-            <div class="area-card">
-                <h3>James Island</h3>
-                <p>Close to downtown Charleston</p>
-            </div>
-            <div class="area-card">
-                <h3>West Ashley</h3>
-                <p>Diverse neighborhoods and values</p>
-            </div>
-        </div>
-    </section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <h3>Start Your Property Search</h3>
+      <p>
+        Explore key Lowcountry areas including Hilton Head Island's South End, Hilton Head Island's North End, Bluffton, Hardeeville, and nearby communities.
+      </p>
 
-    <!-- Market Stats Section -->
-    <section id="market">
-        <h2>Lowcountry Market Insights</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">15+</div>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">500+</div>
-                <p>Happy Clients</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">$200M+</div>
-                <p>In Sales</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">98%</div>
-                <p>Client Satisfaction</p>
-            </div>
-        </div>
-    </section>
+      <div class="links">
+        <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
+          <h3>Search All Listings</h3>
+          <p>Browse current properties through Rob Sedgwick's home search portal.</p>
+        </a>
 
-    <!-- Selling Your Home Section -->
-    <section id="selling">
-        <h2>Selling Your Home?</h2>
-        <div class="selling-content">
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Get a free, no-obligation market analysis of your property. Find out what your home is worth in today's market.</p>
-            
-            <div class="selling-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Market Analysis</h3>
-                    <p>Comprehensive evaluation of your property's value based on current market conditions</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Strategic Marketing</h3>
-                    <p>Professional photography, virtual tours, and targeted advertising to reach qualified buyers</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Expert Negotiation</h3>
-                    <p>Get the best price and terms with skilled negotiation and market expertise</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Smooth Closing</h3>
-                    <p>Handle all details from contract to closing with minimal stress</p>
-                </div>
-            </div>
+        <a class="card" href="https://robertsedgwick.exprealty.com/" target="_blank">
+          <h3>Brokerage Site</h3>
+          <p>Explore additional listings and brokerage resources.</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <!-- Home Valuation Form -->
-            <div class="valuation-form">
-                <h3 style="text-align: center; color: #1e3a5f; margin-bottom: 1.5rem;">Request Your Free Home Valuation</h3>
-                <form id="valuationForm" action="https://formspree.io/f/xlgqvora" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Property Address *</label>
-                        <input type="text" id="address" name="address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="timeline">When are you planning to sell?</label>
-                        <input type="text" id="timeline" name="timeline" placeholder="e.g., Within 3 months, 6 months, just exploring">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Additional Information</label>
-                        <textarea id="message" name="message" placeholder="Tell me more about your property and your goals..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Get My Free Valuation</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <section class="section" id="communities">
+    <h3>Communities Served</h3>
+    <p>
+      Search by area across the Lowcountry, including Hilton Head Island's South End, Hilton Head Island's North End, Bluffton, Hardeeville, Okatie, and surrounding communities.
+    </p>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Clients Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p>"Rob made our home buying experience incredible. His knowledge of the Charleston area and attention to detail helped us find the perfect home for our family. Highly recommended!"</p>
-                <p class="testimonial-author">- Sarah & Michael T.</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"We've worked with several realtors over the years, but Rob stands out. He sold our home in Hilton Head for over asking price in less than two weeks. Professional, responsive, and results-driven."</p>
-                <p class="testimonial-author">- Jennifer L.</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"As first-time homebuyers, we were nervous about the process. Rob walked us through every step, answered all our questions, and negotiated a great deal. We couldn't be happier!"</p>
-                <p class="testimonial-author">- David & Amanda R.</p>
-            </div>
-        </div>
-    </section>
+  <section class="section" id="contact">
+    <h3>Let's Connect</h3>
+    <p>Ready to buy or sell in the Lowcountry? Send a message below.</p>
+    
+    <div style="max-width: 500px; margin: 30px auto; background: #f4f7fb; padding: 30px; border-radius: 6px;">
+      <form action="https://formspree.io/f/xdaqjwvl" method="POST">
+        
+        <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <input type="email" name="email" placeholder="Email Address" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <input type="tel" name="phone" placeholder="Phone Number" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+        
+        <select name="interest" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
+          <option value="">I'm interested in...</option>
+          <option value="buying">Buying</option>
+          <option value="selling">Selling</option>
+          <option value="both">Both</option>
+          <option value="question">General Question</option>
+        </select>
+        
+        <textarea name="message" placeholder="Tell me about what you're looking for" rows="5" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; resize: vertical;"></textarea>
+        
+        <button type="submit" style="background: #0a1f44; color: white; padding: 14px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-family: 'Times New Roman', Times, serif; font-weight: bold; width: 100%;">Send Message</button>
+      </form>
+    </div>
+    
+    <p style="margin-top: 30px; font-size: 15px; color: #333;">
+      <strong>Call or Text:</strong> <a href="tel:+18432272212" style="color: #0a1f44; text-decoration: none; font-weight: bold;">843-227-2212</a><br>
+      <strong>Email:</strong> <a href="mailto:rob@hhirealestate.com" style="color: #0a1f44; text-decoration: none; font-weight: bold;">rob@hhirealestate.com</a>
+    </p>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Let's Connect</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Ready to buy or sell in the Lowcountry? Send a message below.</p>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <div class="contact-item">
-                    <strong>Call or Text:</strong> <a href="tel:+18432272212" style="color: #1e3a5f; text-decoration: none;">843-227-2212</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:rob@hhirealestate.com" style="color: #1e3a5f; text-decoration: none;">rob@hhirealestate.com</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Office:</strong> Hilton Head Island Real Estate
-                </div>
-                <div class="contact-item">
-                    <strong>Serving:</strong> Charleston, Hilton Head Island, Bluffton & Surrounding Areas
-                </div>
-            </div>
-            <div>
-                <form action="https://formspree.io/f/xdaqjwvl" method="POST">
-                    <div class="form-group">
-                        <label for="contact-name">Name *</label>
-                        <input type="text" id="contact-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-email">Email *</label>
-                        <input type="email" id="contact-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-phone">Phone</label>
-                        <input type="tel" id="contact-phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-message">Message *</label>
-                        <textarea id="contact-message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <footer>
+    © 2026 Rob Sedgwick Real Estate | Hilton Head Island, SC
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Rob Sedgwick - Lowcountry Real Estate. All rights reserved.</p>
-        <p>Licensed Real Estate Agent serving Charleston, Hilton Head Island, Bluffton & Surrounding Areas</p>
-    </footer>
+  <script>
+    function buildMyResidesSearchUrl(searchTerm) {
+      var cleanSearchTerm = searchTerm.trim();
+
+      var searchQuery = {
+        SavedSearchId: 0,
+        SearchTypes: [0, 1, 3],
+        PropertyTypes: [0, 1, 2, 3, 19, 20, 21, 30, 39, 40, 41, 49, 50, 59, 60, 61, 69],
+        TransactionTypes: [0],
+        Location: cleanSearchTerm + "_2",
+        Pricing: null,
+        Bedrooms: null,
+        Bathrooms: null,
+        SquareFootage: null,
+        Acreage: null,
+        YearBuilt: null,
+        OpenHouses: null,
+        ChangedDate: null,
+        Keywords: [],
+        MapPolygon: null,
+        MapBounds: null,
+        MapViewBounds: null,
+        Offset: null,
+        SortingPreset: 3
+      };
+
+      var encodedQuery = encodeURIComponent(JSON.stringify(searchQuery));
+      return "https://robsedgwick.myresides.com/search/?q=" + encodedQuery;
+    }
+
+    function searchProperties(event) {
+      event.preventDefault();
+
+      var searchTerm = document.getElementById("propertySearchInput").value.trim();
+
+      if (!searchTerm) {
+        return;
+      }
+
+      var destination = buildMyResidesSearchUrl(searchTerm);
+      window.open(destination, "_blank");
+    }
+
+    function searchSpecificZip(zipCode) {
+      var destination = buildMyResidesSearchUrl(zipCode);
+      window.open(destination, "_blank");
+    }
+
+    // Home Valuation Functions
+    function showValuationForm() {
+      document.getElementById('valuationFormContainer').classList.add('active');
+    }
+
+    function showStep2() {
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
