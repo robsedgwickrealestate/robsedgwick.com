@@ -230,6 +230,92 @@
       background: #14376f;
     }
 
+    /* Home Valuation Section */
+    #home-valuation {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f4f7fb;
+    }
+
+    #home-valuation h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #0a1f44;
+    }
+
+    #home-valuation > p {
+      font-size: 18px;
+      color: #0a1f44;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    #home-valuation > p:hover {
+      color: #14376f;
+    }
+
+    #valuationFormContainer {
+      display: none;
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    #valuationFormContainer.active {
+      display: block;
+    }
+
+    .valuation-step h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #0a1f44;
+    }
+
+    .valuation-step input {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 15px 0;
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      font-family: "Times New Roman", Times, serif;
+      box-sizing: border-box;
+    }
+
+    .valuation-step button {
+      background: #0a1f44;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+
+    .valuation-step button:hover {
+      background: #14376f;
+    }
+
+    .valuation-step {
+      display: none;
+    }
+
+    .valuation-step.active {
+      display: block;
+    }
+
     footer {
       background: #0a1f44;
       color: white;
@@ -283,6 +369,10 @@
       .card {
         width: 85%;
       }
+
+      #valuationFormContainer {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -295,6 +385,7 @@
       <a href="#">Home</a>
       <a href="#search">Search</a>
       <a href="#communities">Communities</a>
+      <a href="#valuation">Sell</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -333,17 +424,47 @@
     </p>
   </section>
 
+  <!-- HOME VALUATION SECTION -->
+  <section id="home-valuation" class="section-light">
+    <h3 id="valuation">Looking to Sell?</h3>
+    <p onclick="showValuationForm()">Get a current market valuation for your home</p>
+
+    <div id="valuationFormContainer">
+      <form id="valuationForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        
+        <!-- Step 1: Property Info -->
+        <div id="step1" class="valuation-step active">
+          <h4>Property Information</h4>
+          <input type="text" name="street_address" placeholder="Street Address" required>
+          <input type="text" name="unit_number" placeholder="Unit Number (if applicable)">
+          <input type="text" name="zip_code" placeholder="Zip Code" required>
+          <input type="text" name="state" placeholder="State" required>
+          <button type="button" onclick="showStep2()">Continue</button>
+        </div>
+        
+        <!-- Step 2: Contact Info -->
+        <div id="step2" class="valuation-step">
+          <h4>Where should we send it?</h4>
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <button type="submit">Get My Valuation</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <section class="section section-light">
     <div class="section-inner">
       <h3>Start Your Property Search</h3>
       <p>
-        Explore key Lowcountry areas including Hilton Head Island’s South End, Hilton Head Island’s North End, Bluffton, Hardeeville, and nearby communities.
+        Explore key Lowcountry areas including Hilton Head Island's South End, Hilton Head Island's North End, Bluffton, Hardeeville, and nearby communities.
       </p>
 
       <div class="links">
         <a class="card" href="https://robsedgwick.myresides.com/" target="_blank">
           <h3>Search All Listings</h3>
-          <p>Browse current properties through Rob Sedgwick’s home search portal.</p>
+          <p>Browse current properties through Rob Sedgwick's home search portal.</p>
         </a>
 
         <a class="card" href="https://robertsedgwick.exprealty.com/" target="_blank">
@@ -357,12 +478,12 @@
   <section class="section" id="communities">
     <h3>Communities Served</h3>
     <p>
-      Search by area across the Lowcountry, including Hilton Head Island’s South End, Hilton Head Island’s North End, Bluffton, Hardeeville, Okatie, and surrounding communities.
+      Search by area across the Lowcountry, including Hilton Head Island's South End, Hilton Head Island's North End, Bluffton, Hardeeville, Okatie, and surrounding communities.
     </p>
   </section>
 
   <section class="section" id="contact">
-    <h3>Let’s Connect</h3>
+    <h3>Let's Connect</h3>
     <p>Ready to buy or sell in the Lowcountry? Reach out today.</p>
     <a class="btn" href="https://robsedgwick.myresides.com/about-me" target="_blank">Contact Rob</a>
   </section>
@@ -417,6 +538,16 @@
     function searchSpecificZip(zipCode) {
       var destination = buildMyResidesSearchUrl(zipCode);
       window.open(destination, "_blank");
+    }
+
+    // Home Valuation Functions
+    function showValuationForm() {
+      document.getElementById('valuationFormContainer').classList.add('active');
+    }
+
+    function showStep2() {
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
     }
   </script>
 
