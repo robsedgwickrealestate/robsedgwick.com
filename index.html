@@ -59,7 +59,7 @@
       color: white;
       background:
         linear-gradient(rgba(10,31,68,0.68), rgba(10,31,68,0.68)),
-        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80");
+        url("images/coastal-bg.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -108,7 +108,6 @@
       font-size: 16px;
       border: 1px solid #c9c9c9;
       border-radius: 4px;
-      /* inherits Times New Roman from global rule */
     }
 
     .property-search-form button {
@@ -120,7 +119,6 @@
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
-      /* inherits Times New Roman from global rule */
     }
 
     .property-search-form button:hover {
@@ -147,7 +145,6 @@
       margin: 0 8px;
       cursor: pointer;
       font-size: 15px;
-      /* inherits Times New Roman from global rule */
     }
 
     .quick-searches button:hover {
@@ -293,7 +290,6 @@
       border: 1px solid #c9c9c9;
       border-radius: 4px;
       box-sizing: border-box;
-      /* inherits Times New Roman from global rule */
     }
 
     .valuation-step button {
@@ -306,7 +302,6 @@
       cursor: pointer;
       margin-top: 10px;
       font-weight: bold;
-      /* inherits Times New Roman from global rule */
     }
 
     .valuation-step button:hover {
@@ -352,14 +347,13 @@
     }
 
     .coastal-parallax .layer.ocean {
-      /* CHANGED: now uses your uploaded image file */
-      background-image: url("5e2c90e8fc073f804f3560c692bd44ce.png");
+      background-image: url("images/coastal-bg.jpg");
       opacity: 0.18;
       filter: saturate(1.1);
     }
 
     .coastal-parallax .layer.dunes {
-      background-image: url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1600&q=80");
+      background-image: url("images/coastal-bg.jpg");
       opacity: 0.20;
       filter: saturate(1.05) contrast(1.02);
       mix-blend-mode: multiply;
@@ -406,7 +400,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       z-index: 9999;
       font-weight: bold;
-      /* inherits Times New Roman from global rule */
     }
 
     .ai-chat-launcher:hover {
@@ -498,7 +491,6 @@
       font-size: 15px;
       border: 1px solid #c9c9c9;
       border-radius: 6px;
-      /* inherits Times New Roman from global rule */
     }
 
     .ai-chatbox-input button {
@@ -509,7 +501,6 @@
       font-weight: bold;
       background: #0a1f44;
       color: #fff;
-      /* inherits Times New Roman from global rule */
     }
 
     .ai-chatbox-input button:hover {
@@ -595,9 +586,9 @@
       <h3 class="property-search-title">Search Lowcountry Homes</h3>
 
       <form class="property-search-form" onsubmit="searchProperties(event)">
-        <input 
-          type="text" 
-          id="propertySearchInput" 
+        <input
+          type="text"
+          id="propertySearchInput"
           placeholder="Enter any zip code, example: 29928"
           required
         >
@@ -652,7 +643,7 @@
 
     <div id="valuationFormContainer">
       <form id="valuationForm" action="https://formspree.io/f/xlgqvora" method="POST">
-        
+
         <!-- Step 1: Property Info -->
         <div id="step1" class="valuation-step active">
           <h4>Property Information</h4>
@@ -662,7 +653,7 @@
           <input type="text" name="state" placeholder="State" required>
           <button type="button" onclick="showStep2()">Continue</button>
         </div>
-        
+
         <!-- Step 2: Contact Info -->
         <div id="step2" class="valuation-step">
           <h4>Where should we send it?</h4>
@@ -706,16 +697,16 @@
   <section class="section" id="contact">
     <h3>Let's Connect</h3>
     <p>Ready to buy or sell in the Lowcountry? Send a message below.</p>
-    
+
     <div style="max-width: 500px; margin: 30px auto; background: #f4f7fb; padding: 30px; border-radius: 6px;">
       <form action="https://formspree.io/f/xdaqjwvl" method="POST">
-        
+
         <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
-        
+
         <input type="email" name="email" placeholder="Email Address" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
-        
+
         <input type="tel" name="phone" placeholder="Phone Number" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
-        
+
         <select name="interest" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
           <option value="">I'm interested in...</option>
           <option value="buying">Buying</option>
@@ -723,13 +714,13 @@
           <option value="both">Both</option>
           <option value="question">General Question</option>
         </select>
-        
+
         <textarea name="message" placeholder="Tell me about what you're looking for" rows="5" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; resize: vertical;"></textarea>
-        
+
         <button type="submit" style="background: #0a1f44; color: white; padding: 14px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-family: 'Times New Roman', Times, serif; font-weight: bold; width: 100%;">Send Message</button>
       </form>
     </div>
-    
+
     <p style="margin-top: 30px; font-size: 15px; color: #333;">
       <strong>Call or Text:</strong> <a href="tel:+18432272212" style="color: #0a1f44; text-decoration: none; font-weight: bold;">843-227-2212</a><br>
       <strong>Email:</strong> <a href="mailto:rob@hhirealestate.com" style="color: #0a1f44; text-decoration: none; font-weight: bold;">rob@hhirealestate.com</a>
@@ -874,8 +865,7 @@
       appendChatMessage(text, "user");
       input.value = "";
 
-      // Lightweight "assistant" responses (non-AI placeholder).
-      // Swap this section for a real AI provider (Chatbase/Tidio/Crisp) without changing the UI.
+      // Lightweight placeholder (non-AI). Swap later for a real AI embed without changing UI.
       var lower = text.toLowerCase();
       var response = "Thanks. If you tell me a zip code (example: 29928) or a community (Hilton Head, Bluffton), I can open the right listing search for you.";
 
