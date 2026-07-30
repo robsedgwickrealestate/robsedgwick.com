@@ -325,6 +325,191 @@
       margin-top: 40px;
     }
 
+    /* ---------------- */
+    /* ADD-ON #1: Coastal parallax BG  */
+    /* ---------------- */
+    .coastal-parallax {
+      position: fixed;
+      inset: 0;
+      z-index: -5;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .coastal-parallax .layer {
+      position: absolute;
+      inset: -5% 0 0 0;
+      background-position: center;
+      background-size: cover;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      opacity: 0.30;
+    }
+
+    .coastal-parallax .layer.ocean {
+      background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80");
+      opacity: 0.18;
+      filter: saturate(1.1);
+    }
+
+    .coastal-parallax .layer.dunes {
+      background-image: url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1600&q=80");
+      opacity: 0.20;
+      filter: saturate(1.05) contrast(1.02);
+      mix-blend-mode: multiply;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .coastal-parallax .layer {
+        transform: none !important;
+      }
+    }
+
+    /* -------------------------------- */
+    /* ADD-ON #2: Current Listings embed section  */
+    /* -------------------------------- */
+    .listings-embed {
+      margin-top: 24px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      background: white;
+    }
+
+    .listings-embed iframe {
+      width: 100%;
+      height: 900px;
+      border: 0;
+      display: block;
+    }
+
+    /* ---------------- */
+    /* ADD-ON #3: AI chatbox popup    */
+    /* ---------------- */
+    .ai-chat-launcher {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: #0a1f44;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      z-index: 9999;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+
+    .ai-chat-launcher:hover {
+      background: #14376f;
+    }
+
+    .ai-chatbox {
+      position: fixed;
+      right: 18px;
+      bottom: 84px;
+      width: min(360px, calc(100vw - 36px));
+      height: 480px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      z-index: 9999;
+      overflow: hidden;
+      display: none;
+    }
+
+    .ai-chatbox.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ai-chatbox-header {
+      background: #0a1f44;
+      color: #fff;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+    }
+
+    .ai-chatbox-header button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .ai-chatbox-messages {
+      padding: 12px;
+      overflow-y: auto;
+      flex: 1;
+      background: #f7f9fc;
+    }
+
+    .ai-msg {
+      margin: 10px 0;
+      font-size: 15px;
+      line-height: 1.45;
+      color: #0a1f44;
+    }
+
+    .ai-msg .bubble {
+      display: inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      max-width: 92%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .ai-msg.user {
+      text-align: right;
+    }
+
+    .ai-msg.user .bubble {
+      background: #0a1f44;
+      color: #fff;
+    }
+
+    .ai-chatbox-input {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      border-top: 1px solid #e5e8ef;
+      background: #fff;
+    }
+
+    .ai-chatbox-input input {
+      flex: 1;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #c9c9c9;
+      border-radius: 6px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .ai-chatbox-input button {
+      padding: 12px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #0a1f44;
+      color: #fff;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .ai-chatbox-input button:hover {
+      background: #14376f;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 28px;
@@ -379,6 +564,12 @@
 
 <body>
 
+  <!-- ADD-ON #1: Coastal parallax BG -->
+  <div class="coastal-parallax" aria-hidden="true">
+    <div class="layer ocean"></div>
+    <div class="layer dunes"></div>
+  </div>
+
   <header>
     <h1>Rob Sedgwick</h1>
     <nav>
@@ -414,6 +605,30 @@
         <button type="button" onclick="searchSpecificZip('29910')">Bluffton</button>
         <button type="button" onclick="searchSpecificZip('29927')">Hardeeville</button>
       </div>
+    </div>
+  </section>
+
+  <!-- ADD-ON #2: Current Listings section (inserted between Search and Local Market Expertise) -->
+  <section class="section section-light" id="current-listings">
+    <div class="section-inner">
+      <h3>Current Listings</h3>
+      <p>Browse current listings and learn more about Rob’s approach to the Hilton Head and Lowcountry market.</p>
+
+      <div class="listings-embed">
+        <iframe
+          src="https://robsedgwick.myresides.com/about-me"
+          title="Current Listings"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <p style="margin-top: 18px;">
+        Prefer a full search experience?
+        <a href="https://robsedgwick.myresides.com/" target="_blank" style="color:#0a1f44; font-weight:bold; text-decoration: underline;">
+          Open the full listing portal
+        </a>
+      </p>
     </div>
   </section>
 
@@ -519,6 +734,29 @@
     © 2026 Rob Sedgwick Real Estate | Hilton Head Island, SC
   </footer>
 
+  <!-- ADD-ON #3: AI Chatbox UI -->
+  <button class="ai-chat-launcher" type="button" onclick="toggleAiChat()">Chat</button>
+
+  <div class="ai-chatbox" id="aiChatbox" role="dialog" aria-label="AI Assistant Chat">
+    <div class="ai-chatbox-header">
+      <div>Ask Rob's Assistant</div>
+      <button type="button" onclick="toggleAiChat()" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="ai-chatbox-messages" id="aiChatMessages">
+      <div class="ai-msg">
+        <div class="bubble">
+          Hi. I can help you find listings, suggest neighborhoods, or connect you with Rob. What are you looking for?
+        </div>
+      </div>
+    </div>
+
+    <form class="ai-chatbox-input" onsubmit="sendAiChat(event)">
+      <input id="aiChatInput" type="text" placeholder="Type your question..." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
   <script>
     function buildMyResidesSearchUrl(searchTerm) {
       var cleanSearchTerm = searchTerm.trim();
@@ -575,6 +813,79 @@
     function showStep2() {
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
+    }
+
+    /* -------------------------------- */
+    /* ADD-ON #1 JS: Parallax scroll logic */
+    /* -------------------------------- */
+    (function () {
+      var ocean = document.querySelector(".coastal-parallax .layer.ocean");
+      var dunes = document.querySelector(".coastal-parallax .layer.dunes");
+      if (!ocean || !dunes) return;
+
+      var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) return;
+
+      window.addEventListener("scroll", function () {
+        var y = window.scrollY || 0;
+        ocean.style.transform = "translate3d(0," + (y * 0.05) + "px,0)";
+        dunes.style.transform = "translate3d(0," + (y * 0.09) + "px,0)";
+      }, { passive: true });
+    })();
+
+    /* -------------------------------- */
+    /* ADD-ON #3 JS: Simple chat behavior  */
+    /* -------------------------------- */
+    function toggleAiChat() {
+      var box = document.getElementById("aiChatbox");
+      box.classList.toggle("active");
+      if (box.classList.contains("active")) {
+        setTimeout(function () {
+          var input = document.getElementById("aiChatInput");
+          if (input) input.focus();
+        }, 50);
+      }
+    }
+
+    function appendChatMessage(text, who) {
+      var messages = document.getElementById("aiChatMessages");
+      var wrapper = document.createElement("div");
+      wrapper.className = "ai-msg" + (who === "user" ? " user" : "");
+      var bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.textContent = text;
+      wrapper.appendChild(bubble);
+      messages.appendChild(wrapper);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function sendAiChat(event) {
+      event.preventDefault();
+      var input = document.getElementById("aiChatInput");
+      var text = (input.value || "").trim();
+      if (!text) return;
+
+      appendChatMessage(text, "user");
+      input.value = "";
+
+      // Lightweight "assistant" responses (non-AI placeholder).
+      // Swap this section for a real AI provider (Chatbase/Tidio/Crisp) without changing the UI.
+      var lower = text.toLowerCase();
+      var response = "Thanks. If you tell me a zip code (example: 29928) or a community (Hilton Head, Bluffton), I can open the right listing search for you.";
+
+      if (lower.includes("sell") || lower.includes("valuation")) {
+        response = "If you're considering selling, you can request a home valuation on this page. If you want, tell me your zip code and timeline and I’ll suggest next steps.";
+      } else if (lower.includes("29928") || lower.includes("hilton head")) {
+        response = "Hilton Head is a great place to start. Want South End or North End? I can open listings for either.";
+      } else if (lower.includes("bluffton") || lower.includes("29910")) {
+        response = "Bluffton listings are popular. If you want, share your price range and beds/baths and I’ll point you to the best search.";
+      } else if (lower.includes("open") || lower.includes("search")) {
+        response = "Tell me what area or zip code you want, and I’ll open the listing portal search in a new tab.";
+      }
+
+      setTimeout(function () {
+        appendChatMessage(response, "bot");
+      }, 450);
     }
   </script>
 
