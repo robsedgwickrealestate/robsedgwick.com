@@ -4,17 +4,22 @@
   <title>Rob Sedgwick Real Estate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts: Cormorant SC (headings) + Cormorant Garamond (body) -->
+  <!-- Fonts: Cormorant SC (headings). Body text uses Times New Roman (system font). -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cormorant+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Times New Roman", Times, serif;
       background-color: #ffffff;
       color: #0a1f44;
+    }
+
+    /* Ensure form controls always match body font */
+    input, textarea, select, button {
+      font-family: "Times New Roman", Times, serif;
     }
 
     header {
@@ -103,7 +108,7 @@
       font-size: 16px;
       border: 1px solid #c9c9c9;
       border-radius: 4px;
-      font-family: "Cormorant Garamond", serif;
+      /* inherits Times New Roman from global rule */
     }
 
     .property-search-form button {
@@ -115,7 +120,7 @@
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
-      font-family: "Cormorant Garamond", serif;
+      /* inherits Times New Roman from global rule */
     }
 
     .property-search-form button:hover {
@@ -141,8 +146,8 @@
       text-decoration: underline;
       margin: 0 8px;
       cursor: pointer;
-      font-family: "Cormorant Garamond", serif;
       font-size: 15px;
+      /* inherits Times New Roman from global rule */
     }
 
     .quick-searches button:hover {
@@ -287,8 +292,8 @@
       font-size: 16px;
       border: 1px solid #c9c9c9;
       border-radius: 4px;
-      font-family: "Cormorant Garamond", serif;
       box-sizing: border-box;
+      /* inherits Times New Roman from global rule */
     }
 
     .valuation-step button {
@@ -300,8 +305,8 @@
       font-size: 16px;
       cursor: pointer;
       margin-top: 10px;
-      font-family: "Cormorant Garamond", serif;
       font-weight: bold;
+      /* inherits Times New Roman from global rule */
     }
 
     .valuation-step button:hover {
@@ -399,8 +404,8 @@
       color: #fff;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       z-index: 9999;
-      font-family: "Cormorant Garamond", serif;
       font-weight: bold;
+      /* inherits Times New Roman from global rule */
     }
 
     .ai-chat-launcher:hover {
@@ -492,7 +497,7 @@
       font-size: 15px;
       border: 1px solid #c9c9c9;
       border-radius: 6px;
-      font-family: "Cormorant Garamond", serif;
+      /* inherits Times New Roman from global rule */
     }
 
     .ai-chatbox-input button {
@@ -503,7 +508,7 @@
       font-weight: bold;
       background: #0a1f44;
       color: #fff;
-      font-family: "Cormorant Garamond", serif;
+      /* inherits Times New Roman from global rule */
     }
 
     .ai-chatbox-input button:hover {
@@ -704,13 +709,13 @@
     <div style="max-width: 500px; margin: 30px auto; background: #f4f7fb; padding: 30px; border-radius: 6px;">
       <form action="https://formspree.io/f/xdaqjwvl" method="POST">
         
-        <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Cormorant Garamond', serif;">
+        <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
         
-        <input type="email" name="email" placeholder="Email Address" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Cormorant Garamond', serif;">
+        <input type="email" name="email" placeholder="Email Address" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
         
-        <input type="tel" name="phone" placeholder="Phone Number" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Cormorant Garamond', serif;">
+        <input type="tel" name="phone" placeholder="Phone Number" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
         
-        <select name="interest" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Cormorant Garamond', serif;">
+        <select name="interest" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif;">
           <option value="">I'm interested in...</option>
           <option value="buying">Buying</option>
           <option value="selling">Selling</option>
@@ -718,9 +723,9 @@
           <option value="question">General Question</option>
         </select>
         
-        <textarea name="message" placeholder="Tell me about what you're looking for" rows="5" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Cormorant Garamond', serif; resize: vertical;"></textarea>
+        <textarea name="message" placeholder="Tell me about what you're looking for" rows="5" required style="display: block; width: 100%; margin: 15px 0; padding: 14px; font-size: 16px; border: 1px solid #c9c9c9; border-radius: 4px; box-sizing: border-box; font-family: 'Times New Roman', Times, serif; resize: vertical;"></textarea>
         
-        <button type="submit" style="background: #0a1f44; color: white; padding: 14px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-family: 'Cormorant Garamond', serif; font-weight: bold; width: 100%;">Send Message</button>
+        <button type="submit" style="background: #0a1f44; color: white; padding: 14px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-family: 'Times New Roman', Times, serif; font-weight: bold; width: 100%;">Send Message</button>
       </form>
     </div>
     
